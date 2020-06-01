@@ -19,9 +19,9 @@
 	<script src="https://kit.fontawesome.com/55d8731b80.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-gray-100 h-screen antialiased leading-none">
-	<header class="w-full text-gray-700">
-		<div class="flex justify-between items-center shadow-sm py-2 lg:py-4 px-1 md:px-10 lg:px-10 bg-white">
+<body class="bg-gray-100 h-screen antialiased leading-none text-gray-900 cursor-default">
+	<header class="w-full text-gray-700 bg-white fixed z-10">
+		<div class="container mx-auto flex justify-between items-center shadow-sm py-2 px-2 md:px-0 md:py-4">
 			<div class="hidden lg:block flex-1">
 				<ul class="flex space-x-16">
 					<li class="cursor-pointer">
@@ -33,9 +33,9 @@
 					</li>
 				</ul>
 			</div>
-			<div class="flex lg:justify-center flex-none">
-				<div class="cursor-pointer">
-					<img src="{{ asset('img/logo.png') }}" alt="Logo" class="w-full rounded-lg">
+			<div class="flex lg:justify-center flex-none w-2/3 md:w-auto">
+				<div class="cursor-pointer w-full">
+					<img src="{{ asset('img/logo.png') }}" alt="Logo" class="rounded-lg w-full" width="100%">
 				</div>
 			</div>
 			<ul class="flex space-x-3 mr-3 items-center block lg:hidden">
@@ -60,7 +60,7 @@
 			</div>
 		</div>
 		<hr>
-		<div class="hidden lg:flex mx-8 bg-white items-center justify-between px-5 py-3 space-x-10">
+		<div class="container mx-auto hidden lg:flex mx-8 bg-white items-center justify-between py-3 px-2 space-x-16">
 			<div class="w-full">
 				<ul class="flex justify-between text-sm">
 					<li>
@@ -103,6 +103,103 @@
 			</div>
 		</div>
 	</header>
+	<nav class="grid lg:hidden grid-cols-2 bg-white py-4 w-full fixed bottom-0 z-10 border-t">
+		<li class="flex items-center justify-center space-x-2 cursor-pointer">
+			<i class="far fa-file text-lg font-light"></i>
+			<p class="text-sm font-semibold">Noticias</p>
+		</li>
+		<li class="flex items-center justify-center space-x-2 cursor-pointer">
+			<i class="far fa-bookmark text-lg"></i>
+			<p class="text-sm">Guardadas</p>
+		</li>
+	</nav>
+
+	<div class="py-8 lg:py-16"></div>
+
+	<section class="container destacadas mx-auto">
+		<article class="destacadas__principal bg-white m-3 md:m-0">
+			<div class="grid grid-cols-12">
+				<div class="destacadas__principal__imagen col-span-12 md:col-span-7">
+					<img src="http://placeimg.com/1000/600/any" alt="" width="1000" height="600">
+					<div class="destacadas__principal__informacion__cabecera flex md:hidden w-1/2 justify-between pt-3 pb-1 pl-4 pr-6 bg-white">
+						<span class="font-semibold cursor-pointer hover:text-gray-700 text-sm">Mundo</span>
+						<i class="far fa-bookmark text-lg cursor-pointer hover:text-gray-700"></i>
+					</div>
+				</div>
+				<div class="destacadas__principal__informacion col-span-12 md:col-span-5">
+					<div class="hidden md:flex justify-between pt-4 pb-2 pl-4 pr-6">
+						<span class="font-semibold cursor-pointer hover:text-gray-700">Mundo</span>
+						<i class="far fa-bookmark text-xl cursor-pointer hover:text-gray-700"></i>
+					</div>
+					<div class="destacadas__principal__informacion__cuerpo p-4 pb-6 bg-white rounded-sm">
+						<h3 class="font-semibold text-2xl lg:text-3xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
+						<p class="ml-8 mt-3 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el sacrificio e irse a una residencia sanitaria"</p>
+					</div>
+				</div>
+			</div>
+		</article>
+
+
+		<div class="destacadas__secundarias grid grid-cols-1 md:grid-cols-3 gap-4">
+			<article class="noticia bg-white m-3 md:m-0">
+				<div class="noticia__imagen">
+					<img src="http://placeimg.com/1000/600/any" alt="" width="1000" height="600">
+					<div class="noticia__informacion__cabecera flex w-1/2 justify-between pt-3 pb-1 pl-4 pr-6 bg-white">
+						<span class="font-semibold cursor-pointer hover:text-gray-700 text-sm">Mundo</span>
+						<i class="far fa-bookmark text-lg cursor-pointer hover:text-gray-700"></i>
+					</div>
+				</div>
+				<div class="noticia__informacion">
+					<div class="p-4 pb-6">
+						<h3 class="font-semibold text-xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
+						<p class="ml-8 mt-3 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el sacrificio e irse a una residencia sanitaria"</p>
+					</div>
+				</div>
+			</article>
+			<article class="noticia bg-white m-3 md:m-0">
+				<div class="noticia__imagen">
+					<img src="http://placeimg.com/1000/600/any" alt="" width="1000" height="600">
+					<div class="noticia__informacion__cabecera flex w-1/2 justify-between pt-3 pb-1 pl-4 pr-6 bg-white">
+						<span class="font-semibold cursor-pointer hover:text-gray-700 text-sm">Mundo</span>
+						<i class="far fa-bookmark text-lg cursor-pointer hover:text-gray-700"></i>
+					</div>
+				</div>
+				<div class="noticia__informacion">
+					<div class="p-4 pb-6">
+						<h3 class="font-semibold text-xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
+						<p class="ml-8 mt-3 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el sacrificio e irse a una residencia sanitaria"</p>
+					</div>
+				</div>
+			</article>
+			<article class="noticia bg-white m-3 md:m-0">
+				<div class="noticia__imagen">
+					<img src="http://placeimg.com/1000/600/any" alt="" width="1000" height="600">
+					<div class="noticia__informacion__cabecera flex w-1/2 justify-between pt-3 pb-1 pl-4 pr-6 bg-white">
+						<span class="font-semibold cursor-pointer hover:text-gray-700 text-sm">Mundo</span>
+						<i class="far fa-bookmark text-lg cursor-pointer hover:text-gray-700"></i>
+					</div>
+				</div>
+				<div class="noticia__informacion">
+					<div class="p-4 pb-6">
+						<h3 class="font-semibold text-xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
+						<p class="ml-8 mt-3 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el sacrificio e irse a una residencia sanitaria"</p>
+					</div>
+				</div>
+			</article>
+		</div>
+		<div class="destacadas__ultimas bg-blue-900">
+			ultimas
+		</div>
+	</section>
+
+	<footer class="bg-gray-300 mt-8 pt-16 pb-24  lg:py-16">
+		<div class="flex flex-col justify-center items-center max-w-xs mx-auto">
+			<img src="{{ asset('img/logo-oscuro.png') }}" alt="Logo" class="rounded-lg w-3/4">
+		</div>
+		<p class="text-md md:text-lg text-gray-900 font-semibold text-center mt-4">
+			CHAIMANOTICIAS<span class="hidden md:inline-block"> - Todos los derechos reservados</span> &copy; 2020
+		</p>
+	</footer>
 
 	{{-- <div class="flex flex-col">
 		@if(Route::has('login'))
