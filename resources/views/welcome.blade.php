@@ -13,7 +13,7 @@
 	<link rel="icon" href="{{ asset('img/icono.png') }}">
 	<link rel="apple-touch-icon" href="{{ asset('img/icono.png') }}">
 	<meta name="msapplication-square310x310logo" content="{{ asset('img/icono.png') }}">
-	
+
 	<title>{{ config('app.name', 'Laravel') }}</title>
 	<link href="{{ mix('css/app.css') }}" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/55d8731b80.js" crossorigin="anonymous"></script>
@@ -116,12 +116,13 @@
 
 	<div class="py-8 lg:py-16"></div>
 
-	<section class="container destacadas mx-auto">
+	<section class="container destacadas mx-auto lg:mt-4">
 		<article class="destacadas__principal bg-white m-3 md:m-0">
 			<div class="grid grid-cols-12">
 				<div class="destacadas__principal__imagen col-span-12 md:col-span-7">
 					<img src="http://placeimg.com/1000/600/any" alt="" width="1000" height="600">
-					<div class="destacadas__principal__informacion__cabecera flex md:hidden w-1/2 justify-between pt-3 pb-1 pl-4 pr-6 bg-white">
+					<div
+						class="destacadas__principal__informacion__cabecera flex md:hidden w-1/2 justify-between pt-3 pb-1 pl-4 pr-6 bg-white">
 						<span class="font-semibold cursor-pointer hover:text-gray-700 text-sm">Mundo</span>
 						<i class="far fa-bookmark text-lg cursor-pointer hover:text-gray-700"></i>
 					</div>
@@ -132,13 +133,17 @@
 						<i class="far fa-bookmark text-xl cursor-pointer hover:text-gray-700"></i>
 					</div>
 					<div class="destacadas__principal__informacion__cuerpo p-4 pb-6 bg-white rounded-sm">
-						<h3 class="font-semibold text-2xl lg:text-3xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
-						<p class="ml-8 mt-3 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el sacrificio e irse a una residencia sanitaria"</p>
+						<h3 class="font-semibold text-2xl lg:text-3xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha
+							tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
+						<div class="flex items-start">
+							<i class="fas fa-angle-double-right text-xs text-blue-700 ml-2 mt-4"></i>
+							<p class="mt-3 ml-2 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el
+								sacrificio e irse a una residencia sanitaria"</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</article>
-
 
 		<div class="destacadas__secundarias grid grid-cols-1 md:grid-cols-3 gap-4">
 			<article class="noticia bg-white m-3 md:m-0">
@@ -151,8 +156,13 @@
 				</div>
 				<div class="noticia__informacion">
 					<div class="p-4 pb-6">
-						<h3 class="font-semibold text-xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
-						<p class="ml-8 mt-3 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el sacrificio e irse a una residencia sanitaria"</p>
+						<h3 class="font-semibold text-xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido
+							contacto con una persona contagiada, debe considerarse enfermo"</h3>
+						<div class="flex items-start">
+							<i class="fas fa-angle-double-right text-xs text-blue-700 ml-2 mt-4"></i>
+							<p class="mt-3 ml-2 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el
+								sacrificio e irse a una residencia sanitaria"</p>
+						</div>
 					</div>
 				</div>
 			</article>
@@ -166,8 +176,13 @@
 				</div>
 				<div class="noticia__informacion">
 					<div class="p-4 pb-6">
-						<h3 class="font-semibold text-xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
-						<p class="ml-8 mt-3 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el sacrificio e irse a una residencia sanitaria"</p>
+						<h3 class="font-semibold text-xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido
+							contacto con una persona contagiada, debe considerarse enfermo"</h3>
+						<div class="flex items-start">
+							<i class="fas fa-angle-double-right text-xs text-blue-700 ml-2 mt-4"></i>
+							<p class="mt-3 ml-2 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el
+								sacrificio e irse a una residencia sanitaria"</p>
+						</div>
 					</div>
 				</div>
 			</article>
@@ -181,14 +196,114 @@
 				</div>
 				<div class="noticia__informacion">
 					<div class="p-4 pb-6">
-						<h3 class="font-semibold text-xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
-						<p class="ml-8 mt-3 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el sacrificio e irse a una residencia sanitaria"</p>
+						<h3 class="font-semibold text-xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha tenido
+							contacto con una persona contagiada, debe considerarse enfermo"</h3>
+						<div class="flex items-start">
+							<i class="fas fa-angle-double-right text-xs text-blue-700 ml-2 mt-4"></i>
+							<p class="mt-3 ml-2 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el
+								sacrificio e irse a una residencia sanitaria"</p>
+						</div>
 					</div>
 				</div>
 			</article>
 		</div>
-		<div class="destacadas__ultimas bg-blue-900">
-			ultimas
+
+
+
+
+
+
+
+
+
+		<div class="destacadas__ultimas">
+			<div class="flex w-full items-center space-x-2 pl-3">
+				<i class="far fa-clock fa-spin text-4xl spinner text-blue-700"></i>
+				<h2 class="text-3xl font-medium">Lo último</h2>
+			</div>
+			<div class="timeline flex justify-start lg:justify-end ml-6 pl-1 lg:p-0">
+				<ul>
+					<li class="cursor-pointer">
+						<article class="flex justify-between bg-white mt-5 mr-2 md:mr-0 pl-3">
+							<div class="p-2">
+								<span class="font-medium text-base text-blue-700">14:00 hrs</span>
+								<p class="mt-1 text-sm md:text-lg lg:text-xs xl:text-sm">OS-7 detiene a miembros de mafia italiana que
+									internaban cocaína en motos a Chile</p>
+							</div>
+							<div class="ultimas__noticia__imagen" style=" background-image: url('http://placeimg.com/1000/600/any');
+												background-position: center center;
+												background-repeat: no-repeat;
+												background-size: cover;">
+							</div>
+						</article>
+						<span class="icono">
+					</li>
+					<li class="cursor-pointer">
+						<article class="flex justify-between bg-white mt-5 mr-2 md:mr-0 pl-3">
+							<div class="p-2">
+								<span class="font-medium text-base text-blue-700">14:00 hrs</span>
+								<p class="mt-1 text-sm md:text-lg lg:text-xs xl:text-sm">OS-7 detiene a miembros de mafia italiana que
+									internaban cocaína en motos a Chile</p>
+							</div>
+							<div class="ultimas__noticia__imagen" style=" background-image: url('http://placeimg.com/1000/600/any');
+												background-position: center center;
+												background-repeat: no-repeat;
+												background-size: cover;">
+							</div>
+						</article>
+						<span class="icono">
+					</li>
+					<li class="cursor-pointer">
+						<article class="flex justify-between bg-white mt-5 mr-2 md:mr-0 pl-3">
+							<div class="p-2">
+								<span class="font-medium text-base text-blue-700">14:00 hrs</span>
+								<p class="mt-1 text-sm md:text-lg lg:text-xs xl:text-sm">OS-7 detiene a miembros de mafia italiana que
+									internaban cocaína en motos a Chile</p>
+							</div>
+							<div class="ultimas__noticia__imagen" style=" background-image: url('http://placeimg.com/1000/600/any');
+												background-position: center center;
+												background-repeat: no-repeat;
+												background-size: cover;">
+							</div>
+						</article>
+						<span class="icono">
+					</li>
+					<li class="cursor-pointer">
+						<article class="flex justify-between bg-white mt-5 mr-2 md:mr-0 pl-3">
+							<div class="p-2">
+								<span class="font-medium text-base text-blue-700">14:00 hrs</span>
+								<p class="mt-1 text-sm md:text-lg lg:text-xs xl:text-sm">OS-7 detiene a miembros de mafia italiana que
+									internaban cocaína en motos a Chile</p>
+							</div>
+							<div class="ultimas__noticia__imagen" style=" background-image: url('http://placeimg.com/1000/600/any');
+												background-position: center center;
+												background-repeat: no-repeat;
+												background-size: cover;">
+							</div>
+						</article>
+						<span class="icono">
+					</li>
+					<li class="cursor-pointer">
+						<article class="flex justify-between bg-white mt-5 mr-2 md:mr-0 pl-3">
+							<div class="p-2">
+								<span class="font-medium text-base text-blue-700">14:00 hrs</span>
+								<p class="mt-1 text-sm md:text-lg lg:text-xs xl:text-sm">OS-7 detiene a miembros de mafia italiana que
+									internaban cocaína en motos a Chile</p>
+							</div>
+							<div class="ultimas__noticia__imagen" style=" background-image: url('http://placeimg.com/1000/600/any');
+												background-position: center center;
+												background-repeat: no-repeat;
+												background-size: cover;">
+							</div>
+						</article>
+						<span class="icono">
+					</li>
+				</ul>
+			</div>
+			<button
+				class="bg-transparent text-blue-700 hover:text-blue-500 border border-blue-700 hover:border-blue-500 rounded mt-5 w-1/2 mx-auto block py-2">
+				Ver más <i class="fas fa-angle-right text-xs"></i>
+			</button>
 		</div>
 	</section>
 

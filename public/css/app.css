@@ -18209,6 +18209,55 @@ video {
   transform: translate(-50%, 0);
 }
 
+/* TIMELINE */
+
+.timeline ul {
+  list-style: none;
+  position: relative;
+}
+
+.timeline ul:before {
+  content: "";
+  width: 4px;
+  height: 90%;
+  position: absolute;
+  border-left: 4px solid #2B6CB0;
+}
+
+.timeline ul li {
+  position: relative;
+}
+
+.timeline ul li>span {
+  width: 4px;
+  height: 100%;
+  background: #2B6CB0;
+  top: 0;
+  position: absolute;
+}
+
+.timeline ul li>span:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 4px solid #2B6CB0;
+  position: absolute;
+  background: #fff;
+  left: -8px;
+  top: 0;
+}
+
+.timeline div>div {
+  margin-top: 1rem;
+}
+
+.ultimas__noticia__imagen {
+  flex-shrink: 0;
+  width: 7rem;
+  height: 7rem;
+}
+
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
