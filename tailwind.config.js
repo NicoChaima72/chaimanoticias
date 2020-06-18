@@ -4,14 +4,16 @@ module.exports = {
     './resources/css/**/*.css',
   ],
   theme: {
-    // container: {
-    //   padding: {
-    //     default: '10rem',
-    //     sm: '1rem',
-    //     lg: '5rem',
-    //     xl: '15rem'
-    //   }
-    // }
+    container: {
+      center: true,
+      padding: {
+        default: '.75rem',
+        sm: '2rem',
+        md: '.5rem',
+        lg: '.75rem',
+        xl: '1.25rem'
+      }
+    }
   },
   variants: {},
   plugins: [
