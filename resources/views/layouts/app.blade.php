@@ -1,4 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+
+	<meta name="theme-color" content="#2B6CB0">
+	<link rel="apple-touch-startup-image" href="{{ asset('img/logo.png') }}">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="icon" href="{{ asset('img/icono.png') }}">
+	<link rel="apple-touch-icon" href="{{ asset('img/icono.png') }}">
+	<meta name="msapplication-square310x310logo" content="{{ asset('img/icono.png') }}">
+
+	<title>{{ config('app.name') }}  -  @yield('title', 'Principales noticias')</title>
+	<meta name="description" content="@yield('description', 'Las últimas noticias del mundo mundial')">
+	<link href="{{ mix('css/app.css') }}" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/55d8731b80.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gray-100 h-screen antialiased leading-none text-gray-900 cursor-default">
+
+	@include('partials.header')
+
+	<nav class="grid lg:hidden grid-cols-2 bg-white py-4 w-full fixed bottom-0 z-10 border-t">
+		<li class="flex items-center justify-center space-x-2 cursor-pointer">
+			<i class="far fa-file text-lg font-light"></i>
+			<p class="text-sm font-semibold">Noticias</p>
+		</li>
+		<li class="flex items-center justify-center space-x-2 cursor-pointer">
+			<i class="far fa-bookmark text-lg"></i>
+			<p class="text-sm">Guardadas</p>
+		</li>
+	</nav>
+
+	
+
+	<div class="container">
+		@yield('content')
+	</div>
+
+	@include('partials.footer')
+
+	
+
+	{{-- <div class="flex flex-col">
+		@if(Route::has('login'))
+		<div class="absolute top-0 right-0 mt-4 mr-4">
+			@auth
+			<a href="{{ url('/home') }}"
+	class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
+	@else
+	<a href="{{ route('login') }}"
+		class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase pr-6">{{ __('Login') }}</a>
+	@if (Route::has('register'))
+	<a href="{{ route('register') }}"
+		class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
+	@endif
+	@endauth
+	</div>
+	@endif
+	<div class="min-h-screen flex items-center justify-center">
+		<div class="flex flex-col justify-around h-full">
+			<div>
+				<h1 class="text-gray-600 text-center font-light tracking-wider text-5xl mb-6">
+					{{ config('app.name', 'Laravel') }}
+				</h1>
+				<ul class="list-reset">
+					<li class="inline pr-8">
+						<a href="https://laravel.com/docs"
+							class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase"
+							title="Documentation">Documentation</a>
+					</li>
+					<li class="inline pr-8">
+						<a href="https://laracasts.com"
+							class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase"
+							title="Laracasts">Laracasts</a>
+					</li>
+					<li class="inline pr-8">
+						<a href="https://laravel-news.com"
+							class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="News">News</a>
+					</li>
+					<li class="inline pr-8">
+						<a href="https://nova.laravel.com"
+							class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Nova">Nova</a>
+					</li>
+					<li class="inline pr-8">
+						<a href="https://forge.laravel.com"
+							class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Forge">Forge</a>
+					</li>
+					<li class="inline pr-8">
+						<a href="https://vapor.laravel.com"
+							class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Vapor">Vapor</a>
+					</li>
+					<li class="inline pr-8">
+						<a href="https://github.com/laravel/laravel"
+							class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="GitHub">GitHub</a>
+					</li>
+					<li class="inline pr-8">
+						<a href="https://tailwindcss.com"
+							class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase"
+							title="Tailwind Css">Tailwind CSS</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div> --}}
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -50,4 +194,4 @@
         @yield('content')
     </div>
 </body>
-</html>
+</html> --}}
