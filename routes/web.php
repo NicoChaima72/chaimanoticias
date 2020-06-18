@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home');
 });
+
+Route::get('{category}/{news}', function () {
+    return view('pages.news');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

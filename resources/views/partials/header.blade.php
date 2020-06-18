@@ -5,10 +5,6 @@
         <li class="cursor-pointer">
           <i class="fas fa-bars text-2xl text-gray-900"></i>
         </li>
-        <li class="flex flex-col items-center space-x-1 cursor-pointer">
-          <i class="far fa-bookmark text-md"></i>
-          <p class="text-xs">Guardadas</p>
-        </li>
       </ul>
     </div>
     <div class="flex lg:justify-center flex-none w-2/3 md:w-auto">
@@ -26,10 +22,6 @@
     </ul>
     <div class="hidden lg:block flex-1">
       <ul class="flex space-x-5 justify-end">
-        <li class="flex items-center space-x-1 cursor-pointer">
-          <i class="far fa-file text-xl"></i>
-          <p class="text-sm">Suscribete</p>
-        </li>
         <li class="flex items-center space-x-1 cursor-pointer">
           <i class="far fa-user text-xl"></i>
           <p class="text-sm">Ingresar</p>
@@ -82,4 +74,4 @@
   </div>
 </header>
 
-<div class="py-8 md:py-10 md:pb-12 lg:py-16"></div>
+<div class="py-8 md:py-10 md:pb-12 lg:pt-16 lg:pb-20"></div>

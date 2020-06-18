@@ -18137,84 +18137,13 @@ video {
   transition-delay: 1000ms;
 }
 
-.destacadas {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, minmax(1rem, auto));
-  grid-gap: 1rem;
-}
-
-@media (min-width: 1024px){
-  .destacadas {
-    grid-template-columns: 9fr 3fr;
-    grid-template-rows: repeat(2, minmax(1rem, auto));
-  }
-}
-
-.destacadas__principal {
-  grid-column-start: 1;
-}
-
-.destacadas__secundarias {
-  grid-column-start: 1;
-}
-
-@media (min-width: 1024px){
-  .destacadas__secundarias {
-    grid-column-start: 1;
-    grid-row-start: 2;
-  }
-}
-
-.destacadas__ultimas {
-  grid-column-start: 1;
-  grid-row-start: 3;
-}
-
-@media (min-width: 1024px){
-  .destacadas__ultimas {
-    grid-column-start: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-  }
-}
-
-.destacadas__principal__imagen {
-  position: relative;
-  z-index: 0;
-}
-
-.destacadas__principal__informacion__cabecera {
-  position: absolute;
-  z-index: 5;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.destacadas__principal__informacion__cuerpo {
-  position: relative;
-}
-
-@media (min-width: 768px){
-  .destacadas__principal__informacion {
-    position: relative;
-  }
-
-  .destacadas__principal__informacion__cuerpo {
-    position: absolute;
-    left: -15%;
-    z-index: 5;
-  }
-}
-
-.noticia__imagen {
+.imagen-rectangular {
   position: relative;
   z-index: 0;
   padding-bottom: 56.2%;
 }
 
-.noticia__imagen img {
+.imagen-rectangular img {
   position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
@@ -18222,15 +18151,19 @@ video {
   height: 100%;
 }
 
-.noticia__informacion__cabecera {
-  position: absolute;
-  z-index: 5;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
+.imagen-cuadrada {
+  position: relative;
+  z-index: 0;
+  padding-bottom: 100%;
 }
 
-/* TIMELINE */
+.imagen-cuadrada img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
 .timeline ul {
   list-style: none;
@@ -18271,20 +18204,6 @@ video {
 
 .timeline div>div {
   margin-top: 1rem;
-}
-
-.ultimas__noticia__imagen {
-  position: relative;
-  z-index: 0;
-  padding-bottom: 100%;
-}
-
-.ultimas__noticia__imagen img {
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
 }
 
 .subtitulo-primario::before {

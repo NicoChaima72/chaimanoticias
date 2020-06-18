@@ -1,4 +1,4 @@
-<div class="flex w-full items-center space-x-2 pl-3">
+<div class="flex w-full items-center space-x-2 pl-3 mt-6 lg:mt-0">
   <i class="far fa-clock fa-spin text-4xl spinner text-blue-700"></i>
   <h2 class="text-3xl font-medium">Lo último</h2>
 </div>
@@ -11,7 +11,7 @@
           <p class="mt-1 text-sm md:text-xl lg:text-xs xl:text-sm">OS-7 detiene a miembros de mafia italiana que
             internaban cocaína en motos a Chile</p>
         </div>
-        <div class="col-span-4 md:col-span-3 lg:col-span-4 ultimas__noticia__imagen">
+        <div class="col-span-4 md:col-span-3 lg:col-span-4 imagen-cuadrada">
           <img src="http://placeimg.com/1000/700/any" alt="">
         </div>
       </article>
@@ -24,7 +24,7 @@
           <p class="mt-1 text-sm md:text-xl lg:text-xs xl:text-sm">OS-7 detiene a miembros de mafia italiana que
             internaban cocaína en motos a Chile</p>
         </div>
-        <div class="col-span-4 md:col-span-3 lg:col-span-4 ultimas__noticia__imagen">
+        <div class="col-span-4 md:col-span-3 lg:col-span-4 imagen-cuadrada">
           <img src="http://placeimg.com/1000/700/any" alt="">
         </div>
       </article>
@@ -37,7 +37,7 @@
           <p class="mt-1 text-sm md:text-xl lg:text-xs xl:text-sm">OS-7 detiene a miembros de mafia italiana que
             internaban cocaína en motos a Chile</p>
         </div>
-        <div class="col-span-4 md:col-span-3 lg:col-span-4 ultimas__noticia__imagen">
+        <div class="col-span-4 md:col-span-3 lg:col-span-4 imagen-cuadrada">
           <img src="http://placeimg.com/1000/700/any" alt="">
         </div>
       </article>
@@ -50,7 +50,7 @@
           <p class="mt-1 text-sm md:text-xl lg:text-xs xl:text-sm">OS-7 detiene a miembros de mafia italiana que
             internaban cocaína en motos a Chile</p>
         </div>
-        <div class="col-span-4 md:col-span-3 lg:col-span-4 ultimas__noticia__imagen">
+        <div class="col-span-4 md:col-span-3 lg:col-span-4 imagen-cuadrada">
           <img src="http://placeimg.com/1000/700/any" alt="">
         </div>
       </article>
@@ -63,7 +63,7 @@
           <p class="mt-1 text-sm md:text-xl lg:text-xs xl:text-sm">OS-7 detiene a miembros de mafia italiana que
             internaban cocaína en motos a Chile</p>
         </div>
-        <div class="col-span-4 md:col-span-3 lg:col-span-4 ultimas__noticia__imagen">
+        <div class="col-span-4 md:col-span-3 lg:col-span-4 imagen-cuadrada">
           <img src="http://placeimg.com/1000/700/any" alt="">
         </div>
       </article>
