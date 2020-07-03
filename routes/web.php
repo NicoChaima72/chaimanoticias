@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
+Route::get('admin', function () {
+    return view('admin.dashboard-admin');
+});
+
 Route::get('{category}/{news}', function () {
     return view('pages.news');
 });

@@ -6,25 +6,16 @@
 
 <main class="grid grid-cols-12 lg:mt-4">
 	<section class="col-span-12 lg:col-span-9">
-		<article class="destacadas__principal bg-white">
-			<div class="grid grid-cols-12">
-				<div class="destacadas__principal__imagen col-span-12 md:col-span-7">
+		<article class="bg-white">
+			<a href="f/f">
+				<div class="grid grid-cols-12">
+					<div class="col-span-12 md:col-span-7 imagen-rectangular relative">
 					<img src="http://placeimg.com/1000/600/any" alt="" width="1000" height="600">
+					<div class="flex md:hidden w-1/2 justify-between pt-3 pb-1 pl-4 pr-6 bg-white mx-auto absolute" style="bottom:0; left: 50%; transform: translateX(-50%)">
+						<span class="font-semibold cursor-pointer hover:text-gray-700 text-sm">Mundo</span>
+					</div>
 				</div>
 				<div class="col-span-12 md:col-span-5">
-					<div class="flex justify-between pt-4 pb-2 pl-4 pr-6">
-						<span class="font-semibold cursor-pointer hover:text-gray-700">Mundo</span>
-						<i class="far fa-bookmark text-xl cursor-pointer hover:text-gray-700"></i>
-					</div>
-					<div class="hidden md:block p-4 pb-6 bg-white rounded-sm relative" style="left: -2.25rem">
-						<h3 class="font-semibold text-2xl xl:text-3xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha
-							tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
-						<div class="flex items-start">
-							<i class="fas fa-angle-double-right text-xs text-blue-700 ml-2 mt-4"></i>
-							<p class="mt-3 ml-2 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el
-								sacrificio e irse a una residencia sanitaria"</p>
-						</div>
-					</div>
 					<div class="block md:hidden p-4 pb-6 bg-white rounded-sm relative">
 						<h3 class="font-semibold text-xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha
 							tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
@@ -34,10 +25,24 @@
 								sacrificio e irse a una residencia sanitaria"</p>
 						</div>
 					</div>
+
+					<div class="hidden md:flex justify-between pt-4 pb-2 pl-4 pr-6">
+						<span class="font-semibold cursor-pointer hover:text-gray-700">Mundo</span>
+					</div>
+					<div class="hidden md:block p-4 pb-6 bg-white rounded-sm relative" style="left: -2.25rem">
+						<h3 class="font-semibold text-2xl xl:text-3xl cursor-pointer hover:text-gray-700">Doctor Ugarte: "Si uno ha
+							tenido contacto con una persona contagiada, debe considerarse enfermo"</h3>
+						<div class="flex items-start">
+							<i class="fas fa-angle-double-right text-xs text-blue-700 ml-2 mt-4"></i>
+							<p class="mt-3 ml-2 font-medium">Doctor Paris y medidas para frenar pandemia: "La gente tiene que hacer el
+								sacrificio e irse a una residencia sanitaria"</p>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-		</article>
-		<div class="destacadas__secundarias grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+			</a>
+			</article>
+			<div class="destacadas__secundarias grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
 			<article class=" bg-white">
 				<div class="imagen-rectangular relative">
 					<img src="http://placeimg.com/1000/600/any" alt="">

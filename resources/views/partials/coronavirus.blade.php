@@ -1,10 +1,10 @@
-<div class="bg-red-600 flex items-center justify-between space-x-2 text-white text-sm font-bold px-4 py-3 relative my-2"
+<div id="alertCoronavirus" class="bg-red-600 flex items-start justify-between space-x-2 text-white text-sm font-bold px-4 py-3 relative my-2"
   role="alert">
   <div class="flex items-center space-x-2">
     <i class="fas fa-bell"></i>
     <p>Minuto a minuto: Las últimas noticias sobre el coronavirus</p>
   </div>
-  <i class="fas fa-times"></i>
+  <i id="btnCerrarCoronavirus" class="fas fa-times cursor-pointer"></i>
 </div>
 
 
@@ -45,3 +45,12 @@
     </div>
   </div>
 </div>
+
+<script>
+  const alertCoronavirus = document.getElementById('alertCoronavirus');
+  const cerrarAlertCoronavirus = document.getElementById('btnCerrarCoronavirus');
+
+  cerrarAlertCoronavirus.addEventListener('click', () => {
+    alertCoronavirus.style.display = 'none';
+  })
+</script>

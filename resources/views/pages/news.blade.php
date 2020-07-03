@@ -16,10 +16,9 @@
 				<img src="http://placeimg.com/1000/600/any" alt="">
 			</div>
 			<div class="relative">
-				<div class="bg-white w-11/12 mx-auto px-3 md:px-5 relative" style="top: -4rem;">
-					<div class="flex justify-between py-3 lg:py-4">
+				<div class="bg-white w-11/12 mx-auto px-4 md:px-5 relative" style="top: -4rem;">
+					<div class="flex justify-between py-4 lg:py-4">
 						<span class="font-semibold cursor-pointer">Mundo</span>
-							<i class="far fa-bookmark text-xl cursor-pointer"></i>
 					</div>
 					<h1 class="font-semibold text-3xl md:text-4xl cursor-pointer">Doctor Ugarte: "Si uno ha
 						tenido contacto con una persona contagiada, debe considerarse enfermo"</h1>
@@ -28,6 +27,18 @@
 						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, eligendi. Hic asperiores inventore aut enim tempora, error modi aliquam fugiat adipisci commodi provident ullam quo doloribus? Libero inventore error sint neque totam voluptatem corporis dignissimos consequuntur mollitia nulla, placeat perferendis!</p>
 						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, eligendi. Hic asperiores inventore aut enim tempora, error modi aliquam fugiat adipisci commodi provident ullam quo doloribus? Libero inventore error sint neque totam voluptatem corporis dignissimos consequuntur mollitia nulla, placeat perferendis!</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum deleniti natus quidem molestias odit enim reprehenderit eveniet, sapiente cupiditate. Nulla sit aliquam saepe rem consectetur asperiores dignissimos harum commodi rerum consequatur animi aliquid distinctio neque eligendi alias, cumque optio a voluptatibus adipisci eos! A accusamus velit tenetur quaerat ut, natus magni dolore animi sapiente explicabo quia nulla. Libero, voluptas eveniet.</p>
+					</div>
+					<div class="mt-20">
+						<div id="disqus_thread"></div>
+						<script>
+						(function() { // DON'T EDIT BELOW THIS LINE
+						var d = document, s = d.createElement('script');
+						s.src = 'https://chaimanoticias.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+						})();
+						</script>
+						<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 					</div>
 				</div>
 			</div>
@@ -120,7 +131,7 @@
 			</div>
 		</section>
 	</section>
-	<section class="col-span-12 lg:col-span-3 pt-6 lg:pt-none">
+	<section class="col-span-12 lg:col-span-3 pt-6 lg:pt-0">
 		@include('partials.timeline')
 	</section>
 </main>

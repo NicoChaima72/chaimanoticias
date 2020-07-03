@@ -6,21 +6,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-
 	<meta name="theme-color" content="#2B6CB0">
-	<link rel="apple-touch-startup-image" href="{{ asset('img/logo.png') }}">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-square310x310logo" content="{{ asset('img/icono.png') }}">
+	<meta name="description" content="@yield('description', 'Las últimas noticias del mundo mundial')">
+
+	<link rel="apple-touch-startup-image" href="{{ asset('img/logo.png') }}">
 	<link rel="icon" href="{{ asset('img/icono.png') }}">
 	<link rel="apple-touch-icon" href="{{ asset('img/icono.png') }}">
-	<meta name="msapplication-square310x310logo" content="{{ asset('img/icono.png') }}">
 
 	<title>{{ config('app.name') }}  -  @yield('title', 'Principales noticias')</title>
-	<meta name="description" content="@yield('description', 'Las últimas noticias del mundo mundial')">
+	
 	<link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+	<script src="{{ mix('js/app.js') }}"></script>
 	<script src="https://kit.fontawesome.com/55d8731b80.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-gray-100 h-screen antialiased leading-none text-gray-900 cursor-default">
+<body id="body" class="bg-gray-100 h-screen antialiased leading-none text-gray-900 cursor-default">
 
 	@include('partials.header')
 	@include('partials.nav-button')
