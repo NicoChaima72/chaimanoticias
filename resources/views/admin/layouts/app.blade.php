@@ -79,7 +79,6 @@
   <script src="/adminlte/js/jquery.min.js"></script>
   <script src="/adminlte/js/bootstrap.bundle.min.js"></script>
   <script src="/adminlte/js/adminlte.min.js"></script>
-  <script src="/adminlte/js/demo.js"></script>
   @stack('scripts')
 </body>
 
