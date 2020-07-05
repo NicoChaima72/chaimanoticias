@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('description', 'Dashboard')
 @section('title', 'Dashboard')
-@push('link')
+@push('links')
 <link rel="stylesheet" href="/adminlte/css/datatables/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="/adminlte/css/datatables/dataTables.responsive.bootstrap4.min.css">
 @endpush

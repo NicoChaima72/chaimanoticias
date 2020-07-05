@@ -17,9 +17,32 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
-Route::get('admin', function () {
-    return view('admin.dashboard-admin');
+Route::group([
+    'prefix' => 'admin',
+    'namespace' => 'Admin'
+], function () {
+    Route::get('/', function () {
+        return view('admin.dashboard-admin');
+    });
+    Route::get('/categories/create', function () {
+        return view('admin.categories.maintainer');
+    });
+    Route::get('/subcategories/create', function () {
+        return view('admin.subcategories.maintainer');
+    });
+    Route::get('/colors/create', function () {
+        return view('admin.colors.maintainer');
+    });
+    Route::get('/importances/create', function () {
+        return view('admin.importances.maintainer');
+    });
 });
+
+
+
+// Route::get('admin', function () {
+//     return view('admin.dashboard-admin');
+// });
 
 Route::get('{category}/{news}', function () {
     return view('pages.news');

@@ -34,6 +34,29 @@
     </li>
     <li class="nav-item has-treeview">
       <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-palette"></i>
+        <p>
+          Colores
+          <i class="right fas fa-angle-left"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="../../index.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Ver colores</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../../index2.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Agregar color</p>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item has-treeview">
+      <a href="#" class="nav-link">
         <i class="nav-icon fas fa-award"></i>
         <p>
           Categorias
@@ -74,6 +97,29 @@
           <a href="../../index2.html" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Agregar subcategoria</p>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item has-treeview">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-star"></i>
+        <p>
+          Importancia
+          <i class="right fas fa-angle-left"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="../../index.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Ver importancias</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../../index2.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Agregar importancia</p>
           </a>
         </li>
       </ul>
