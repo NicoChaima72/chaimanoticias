@@ -11,32 +11,9 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
-
-Route::group([
-    'prefix' => 'admin',
-    'namespace' => 'Admin'
-], function () {
-    Route::get('/', function () {
-        return view('admin.dashboard-admin');
-    });
-    Route::get('/categories/create', function () {
-        return view('admin.categories.maintainer');
-    });
-    Route::get('/subcategories/create', function () {
-        return view('admin.subcategories.maintainer');
-    });
-    Route::get('/colors/create', function () {
-        return view('admin.colors.maintainer');
-    });
-    Route::get('/importances/create', function () {
-        return view('admin.importances.maintainer');
-    });
-});
+Route::get('/', 'PagesController@home')->name('pages.home');
 
 
 
@@ -52,3 +29,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+Route::group([
+    'prefix' => 'admin',
+    'namespace' => 'Admin',
+    'middleware' => 'auth'
+], function () {
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+    // Route::get('/categories/create', function () {
+    //     return view('admin.categories.maintainer');
+    // });
+    // Route::get('/subcategories/create', function () {
+    //     return view('admin.subcategories.maintainer');
+    // });
+    // Route::get('/colors/create', function () {
+    //     return view('admin.colors.maintainer');
+    // });
+    // Route::get('/importances/create', function () {
+    //     return view('admin.importances.maintainer');
+    // });
+});

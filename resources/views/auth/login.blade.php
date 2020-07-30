@@ -25,33 +25,48 @@
 <body class="hold-transition login-page">
   <div class="mt-5 pt-5">
     <div class="login-logo">
-      <a href="../../index2.html"><b>Chaima</b>NOTICIAS</a>
+      <a href="{{ route('pages.home') }}"><b>Chaima</b>NOTICIAS</a>
     </div>
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg">Ingresa tus datos para iniciar sesion</p>
 
-        <form action="../../index3.html" method="post">
-          <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+        <form action="{{ route('login') }}" method="post">
+          @csrf
+          <div class="mb-3">
+            <div class="input-group">
+              <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" autofocus>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
               </div>
             </div>
+            @error('email')
+            <span class="d-block text-danger" role="alert">
+              <small>{{ $message }}</small>
+            </span>
+            @enderror
           </div>
-          <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Contraseña">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
+          <div class="mb-3">
+            <div class="input-group">
+              <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Contraseña">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
               </div>
             </div>
+            @error('password')
+            <span class="d-block text-danger" role="alert">
+              <small>{{ $message }}</small>
+            </span>
+            @enderror
           </div>
           <div class="row">
             <div class="col-8">
               <div class="icheck-primary">
-                <input type="checkbox" id="remember">
+                <input type="checkbox" name="remember" id="remember" class="form-checkbox" {{ old('remember') ? 'checked' : '' }}>
                 <label for="remember">
                   Recuerdame
                 </label>
@@ -79,57 +94,16 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {{-- @extends('layouts.app')
 
 @section('content')
 <div class="container mx-auto">
   <div class="flex flex-wrap justify-center">
-    <div class="w-full max-w-sm">
-      <div class="flex flex-col break-words bg-white border-2 rounded shadow-md">
+	<div class="w-full max-w-sm">
+	  <div class="flex flex-col break-words bg-white border-2 rounded shadow-md">
 
-        <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
-          {{ __('Login') }}
+		<div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
+		  {{ __('Login') }}
 </div>
 
 <form class="w-full p-6" method="POST" action="{{ route('login') }}">
@@ -140,8 +114,7 @@
       {{ __('E-Mail Address') }}:
     </label>
 
-    <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email"
-      value="{{ old('email') }}" required autocomplete="email" autofocus>
+    <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
     @error('email')
     <p class="text-red-500 text-xs italic mt-4">
@@ -155,8 +128,7 @@
       {{ __('Password') }}:
     </label>
 
-    <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror"
-      name="password" required>
+    <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" required>
 
     @error('password')
     <p class="text-red-500 text-xs italic mt-4">
@@ -173,14 +145,12 @@
   </div>
 
   <div class="flex flex-wrap items-center">
-    <button type="submit"
-      class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
       {{ __('Login') }}
     </button>
 
     @if (Route::has('password.request'))
-    <a class="text-sm text-blue-500 hover:text-blue-700 whitespace-no-wrap no-underline ml-auto"
-      href="{{ route('password.request') }}">
+    <a class="text-sm text-blue-500 hover:text-blue-700 whitespace-no-wrap no-underline ml-auto" href="{{ route('password.request') }}">
       {{ __('Forgot Your Password?') }}
     </a>
     @endif

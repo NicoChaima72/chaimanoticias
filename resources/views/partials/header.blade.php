@@ -9,7 +9,7 @@
     </div>
     <div class="flex lg:justify-center flex-none w-2/3 md:w-auto">
       <div class="cursor-pointer w-full">
-        <a href="/">
+        <a href="{{ route('pages.home') }}">
           <img src="{{ asset('img/logo.png') }}" alt="Logo" class="w-full max-w-xs">
         </a>
       </div>
@@ -24,10 +24,10 @@
     </ul>
     <div class="hidden lg:block flex-1">
       <ul class="flex space-x-5 justify-end">
-        <li class="flex items-center space-x-1 cursor-pointer">
+        <a href="{{ route('login') }}" class="flex items-center space-x-1 cursor-pointer">
           <i class="far fa-user text-xl"></i>
           <p class="text-sm">Ingresar</p>
-        </li>
+        </a>
       </ul>
     </div>
   </div>
@@ -78,8 +78,7 @@
 
 <div class="py-8 md:py-10 md:pb-12 lg:pt-16 lg:pb-20"></div>
 
-<section id="menu" class="hidden w-full h-screen fixed z-40 top-0 text-white overflow-y-auto pt-4 lg:pt-6 pb-16"
-  style="background-color: rgba(43,108,176, .95)">
+<section id="menu" class="hidden w-full h-screen fixed z-40 top-0 text-white overflow-y-auto pt-4 lg:pt-6 pb-16" style="background-color: rgba(43,108,176, .95)">
   <div class="container">
     <div class="flex items-start w-full">
       <div class="flex items-end">
@@ -88,8 +87,7 @@
       <i class="btn-menu fas fa-times ml-auto text-3xl mr-1 cursor-pointer"></i>
     </div>
     <form class="w-full flex px-2 mt-6 lg:mt-12">
-      <input id="txtBuscar" name="buscar" class="outline-none bg-transparent border-b-2 text-white text-2xl font-medium flex-1 placeholder-gray-400"
-        placeholder="buscar...">
+      <input id="txtBuscar" name="buscar" class="outline-none bg-transparent border-b-2 text-white text-2xl font-medium flex-1 placeholder-gray-400" placeholder="buscar...">
       <button type="submit">
         <i class="fas fa-search text-2xl ml-2"></i>
       </button>
@@ -158,7 +156,7 @@
 
   menu.style.display = 'none';
   categorias.style.display = 'grid';
-  
+
   botonesMenu.forEach(boton => {
     boton.addEventListener('click', () => {
       if (menu.style.display === 'none') {
@@ -179,5 +177,4 @@
       })
     });
   });
-  
 </script>
