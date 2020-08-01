@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +22,9 @@ Route::get('/', 'PagesController@home')->name('pages.home');
 //     return view('admin.dashboard-admin');
 // });
 
-Route::get('{category}/{news}', function () {
-    return view('pages.news');
-});
+// Route::get('{category}/{news}', function () {
+//     return view('pages.news');
+// });
 
 Auth::routes();
 
@@ -32,21 +33,23 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group([
-    'prefix' => 'admin',
-    'namespace' => 'Admin',
-    'middleware' => 'auth'
+	'prefix' => 'admin',
+	'namespace' => 'Admin',
+	'middleware' => 'auth',
+	'as' => 'admin.'
 ], function () {
-    Route::get('/', 'AdminController@index')->name('admin.dashboard');
-    // Route::get('/categories/create', function () {
-    //     return view('admin.categories.maintainer');
-    // });
-    // Route::get('/subcategories/create', function () {
-    //     return view('admin.subcategories.maintainer');
-    // });
-    // Route::get('/colors/create', function () {
-    //     return view('admin.colors.maintainer');
-    // });
-    // Route::get('/importances/create', function () {
-    //     return view('admin.importances.maintainer');
-    // });
+	Route::get('/', 'AdminController@index')->name('dashboard');
+	Route::resource('colors', 'ColorsController', ['excerpt' => 'show']);
+	// Route::get('/categories/create', function () {
+	//     return view('admin.categories.maintainer');
+	// });
+	// Route::get('/subcategories/create', function () {
+	//     return view('admin.subcategories.maintainer');
+	// });
+	// Route::get('/colors/create', function () {
+	//     return view('admin.colors.maintainer');
+	// });
+	// Route::get('/importances/create', function () {
+	//     return view('admin.importances.maintainer');
+	// });
 });
