@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ColorRequest extends FormRequest
+class CreateColorRequest extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class ColorRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'description' => 'required|unique:colors,description,' . $this->id,
+			'description' => 'required|unique:colors,description',
 			'background'  => 'required',
 			'text'        => 'required',
 		];

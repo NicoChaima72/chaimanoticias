@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Color;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ColorRequest;
+use App\Http\Requests\CreateColorRequest;
+use App\Http\Requests\UpdateColorRequest;
 use Illuminate\Http\Request;
 
 class ColorsController extends Controller
@@ -16,7 +17,9 @@ class ColorsController extends Controller
 	 */
 	public function index()
 	{
-		return 'Listando colores';
+		$colors = Color::get();
+		return view('admin.colors.index')
+			->with('colors', $colors);
 	}
 
 	/**
@@ -26,7 +29,9 @@ class ColorsController extends Controller
 	 */
 	public function create()
 	{
-		return view('admin.colors.maintainer');
+		return view('admin.colors.form')
+			->with('color', new Color)
+			->with('action', 'create');
 	}
 
 	/**
@@ -35,13 +40,14 @@ class ColorsController extends Controller
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(ColorRequest $request)
+	public function store(CreateColorRequest $request)
 	{
 		Color::create($request->all());
 
 		return redirect()->route('admin.colors.index')
+			->with('message', 'Color <strong>guardado</strong> correctamente')
 			->with('icon', 'fas fa-check')
-			->with('message', 'Color guardado exitosamente');
+			->with('alert', 'alert-success');
 	}
 	/**
 	 * Show the form for editing the specified resource.
@@ -49,9 +55,11 @@ class ColorsController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit($id)
+	public function edit(Color $color)
 	{
-		//
+		return view('admin.colors.form')
+			->with('color', $color)
+			->with('action', 'edit');
 	}
 
 	/**
@@ -61,9 +69,14 @@ class ColorsController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, $id)
+	public function update(UpdateColorRequest $request, Color $color)
 	{
-		//
+		$color->update($request->all());
+
+		return redirect()->route('admin.colors.index')
+			->with('message', 'Color <strong>actualizado</strong> correctamente')
+			->with('icon', 'fas fa-check')
+			->with('alert', 'alert-success');
 	}
 
 	/**
@@ -72,8 +85,13 @@ class ColorsController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy($id)
+	public function destroy(Color $color)
 	{
-		//
+		$color->delete();
+
+		return redirect()->route('admin.colors.index')
+			->with('message', "El color <strong>$color->description</strong> se ha <strong>eliminado</strong>")
+			->with('icon', 'fas fa-check')
+			->with('alert', 'alert-warning');
 	}
 }

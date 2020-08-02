@@ -1,7 +1,7 @@
 <nav class="mt-2">
 	<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 		<li class="nav-item">
-			<a href="../widgets.html" class="nav-link">
+			<a href="{{ route('admin.dashboard') }}" class="nav-link {{ setActiveRoute('admin.dashboard') }}">
 				<i class="nav-icon fas fa-tachometer-alt"></i>
 				<p>
 					Dashboard
@@ -9,8 +9,8 @@
 				</p>
 			</a>
 		</li>
-		<li class="nav-item has-treeview menu-open">
-			<a href="#" class="nav-link active">
+		<li class="nav-item has-treeview {{ setMenuOpen('admin.news*') }}">
+			<a href="#" class="nav-link {{ setActiveRoute('admin.news*') }}">
 				<i class="nav-icon fas fa-newspaper"></i>
 				<p>
 					Noticias
@@ -19,21 +19,21 @@
 			</a>
 			<ul class="nav nav-treeview">
 				<li class="nav-item">
-					<a href="../../index.html" class="nav-link active">
+					<a href="../../index.html" class="nav-link {{ setActiveRoute('admin.news') }}">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Mis noticias</p>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="../../index2.html" class="nav-link">
+					<a href="../../index2.html" class="nav-link {{ setActiveRoute('admin.news.create') }}">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Agregar noticia</p>
 					</a>
 				</li>
 			</ul>
 		</li>
-		<li class="nav-item has-treeview">
-			<a href="#" class="nav-link">
+		<li class="nav-item has-treeview {{ setMenuOpen('admin.colors*') }}">
+			<a href="#" class="nav-link  {{ setActiveRoute('admin.colors*') }}">
 				<i class="nav-icon fas fa-palette"></i>
 				<p>
 					Colores
@@ -41,14 +41,14 @@
 				</p>
 			</a>
 			<ul class="nav nav-treeview">
-				<li class="nav-item">
-					<a href="../../index.html" class="nav-link">
+				<li class="nav-item  {{ setActiveRoute('admin.colors') }}">
+					<a href="{{ route('admin.colors.index') }}" class="nav-link  {{ setActiveRoute('admin.colors.index') }}">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Ver colores</p>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="{{ route('admin.colors.create') }}" class="nav-link">
+					<a href="{{ route('admin.colors.create') }}" class="nav-link  {{ setActiveRoute('admin.colors.create') }}">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Agregar color</p>
 					</a>
