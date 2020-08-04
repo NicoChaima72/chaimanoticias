@@ -42,21 +42,21 @@
 			</a>
 			<ul class="nav nav-treeview">
 				<li class="nav-item  {{ setActiveRoute('admin.colors') }}">
-					<a href="{{ route('admin.colors.index') }}" class="nav-link  {{ setActiveRoute('admin.colors.index') }}">
+					<a href="{{ route('admin.colors.index') }}" class="nav-link {{ setActiveRoute('admin.colors.index') }}">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Ver colores</p>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="{{ route('admin.colors.create') }}" class="nav-link  {{ setActiveRoute('admin.colors.create') }}">
+					<a href="{{ route('admin.colors.create') }}" class="nav-link {{ setActiveRoute('admin.colors.create') }}">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Agregar color</p>
 					</a>
 				</li>
 			</ul>
 		</li>
-		<li class="nav-item has-treeview">
-			<a href="#" class="nav-link">
+		<li class="nav-item has-treeview {{ setMenuOpen('admin.categories*') }}">
+			<a href="#" class="nav-link {{ setActiveRoute('admin.categories*') }}">
 				<i class="nav-icon fas fa-award"></i>
 				<p>
 					Categorias
@@ -65,13 +65,15 @@
 			</a>
 			<ul class="nav nav-treeview">
 				<li class="nav-item">
-					<a href="../../index.html" class="nav-link">
+					<a href="{{ route('admin.categories.index') }}"
+						class="nav-link {{ setActiveRoute('admin.categories.index') }}">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Ver categorias</p>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="../../index2.html" class="nav-link">
+					<a href="{{ route('admin.categories.create') }}"
+						class="nav-link {{ setActiveRoute('admin.categories.create') }}">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Agregar categoria</p>
 					</a>

@@ -40,6 +40,7 @@ Route::group([
 ], function () {
 	Route::get('/', 'AdminController@index')->name('dashboard');
 	Route::resource('colors', 'ColorsController', ['excerpt' => 'show']);
+	Route::resource('categories', 'CategoriesController');
 	// Route::get('/categories/create', function () {
 	//     return view('admin.categories.maintainer');
 	// });

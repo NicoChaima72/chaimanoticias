@@ -29,9 +29,10 @@ class ColorsController extends Controller
 	 */
 	public function create()
 	{
-		return view('admin.colors.form')
-			->with('color', new Color)
-			->with('action', 'create');
+		return view('admin.colors.form', [
+			'color' => new Color,
+			'action' => 'create'
+		]);
 	}
 
 	/**
@@ -57,9 +58,10 @@ class ColorsController extends Controller
 	 */
 	public function edit(Color $color)
 	{
-		return view('admin.colors.form')
-			->with('color', $color)
-			->with('action', 'edit');
+		return view('admin.colors.form', [
+			'color' => $color,
+			'action' => 'edit'
+		]);
 	}
 
 	/**

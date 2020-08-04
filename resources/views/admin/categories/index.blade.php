@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
-@section('description', 'Listado colores')
-@section('title', 'Listado colores')
+@section('description', 'Listado categorias')
+@section('title', 'Listado categorias')
 @push('links')
 <link rel="stylesheet" href="/adminlte/css/datatables/dataTables.bootstrap4.min.css">
 <style>
@@ -10,10 +10,10 @@
 </style>
 @endpush
 
-@section('content-title', 'Lista colores')
+@section('content-title', 'Lista categorias')
 @section('content-button')
-<a class="btn btn-primary" href="{{ route('admin.colors.create') }}">
-	<i class="fas fa-plus"></i> Agregar color
+<a class="btn btn-primary" href="{{ route('admin.categories.create') }}">
+	<i class="fas fa-plus"></i> Agregar categoria
 </a>
 @endsection
 
@@ -31,7 +31,7 @@
 
 <div class="card">
 	<div class="card-header">
-		<h3 class="card-title">Todos los colores</h3>
+		<h3 class="card-title">Todas las categorias</h3>
 	</div>
 	<div class="card-body" style="overflow: auto">
 
@@ -39,56 +39,57 @@
 			<thead>
 				<tr>
 					<th>Descripcion</th>
-					<th>Fondo</th>
-					<th>Texto</th>
+					<th>Color</th>
+					{{-- <th>Texto</th>
 					<th>Ejemplo</th>
+					--}}
 					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($colors as $color)
+				@foreach ($categories as $category)
 				<tr>
-					<td>{{ $color->description }}</td>
+					<td>{{ $category->description }}</td>
 					<td>
-						<div class="d-flex align-items-center">
-							<div class="rounded-circle border mr-2"
-								style="width: 20px; height: 20px; background: {{ $color->background }}">
-							</div>
-							{{ $color->background }}
-						</div>
-					</td>
-					<td>
-						<div class="d-flex align-items-center">
-							<div class="rounded-circle border mr-2" style="width: 20px; height: 20px; background: {{ $color->text }}">
-							</div>
-							{{ $color->text }}
-						</div>
-					</td>
-					<td>
-						<span class="p-2 rounded badge" style="color: {{ $color->text }}; background: {{ $color->background }}">
+						<span class="badge badge-primary"
+							style="background: {{ $category->color->background }}; color: {{ $category->color->text }}">
 							Ejemplo
 						</span>
 					</td>
-					<td>
-						<div class="d-flex">
-							<a href="{{ route('admin.colors.edit', $color) }}" class="btn btn-sm btn-warning mx-1">
-								<i class="fas fa-pen"></i>
-							</a>
-							<a href="" class="btn btn-sm btn-outline-danger mx-1"
-								onclick="showMessage(event, '{{ $color->description }}', 'form-destroy-{{ $color->id }}');">
-								<i class="fas fa-trash"></i>
-							</a>
-							<form id="form-destroy-{{ $color->id }}" action="{{ route('admin.colors.destroy', $color) }}"
-								method="POST" class="d-none">
-								@csrf @method("DELETE")
-							</form>
-						</div>
-					</td>
-				</tr>
-				@endforeach
-			</tbody>
-		</table>
+					{{--
+<td>
+	<div class="d-flex align-items-center">
+		<div class="rounded-circle border mr-2" style="width: 20px; height: 20px; background: {{ $color->text }}">
 	</div>
+	{{ $color->text }}
+</div>
+</td>
+<td>
+	<span class="p-2 rounded badge" style="color: {{ $color->text }}; background: {{ $color->background }}">
+		Ejemplo
+	</span>
+</td>
+--}}
+<td>
+	<div class="d-flex">
+		<a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-sm btn-warning mx-1">
+			<i class="fas fa-pen"></i>
+		</a>
+		<a href="" class="btn btn-sm btn-outline-danger mx-1"
+			onclick="showMessage(event, '{{ $category->description }}', 'form-destroy-{{ $category->id }}');">
+			<i class="fas fa-trash"></i>
+		</a>
+		<form id="form-destroy-{{ $category->id }}" action="{{ route('admin.categories.destroy', $category) }}"
+			method="POST" class="d-none">
+			@csrf @method("DELETE")
+		</form>
+	</div>
+</td>
+</tr>
+@endforeach
+</tbody>
+</table>
+</div>
 </div>
 @endsection
 
