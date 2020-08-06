@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Color;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateColorRequest;
-use App\Http\Requests\UpdateColorRequest;
+use App\Http\Requests\ColorRequest;
 use Illuminate\Http\Request;
 
 class ColorsController extends Controller
@@ -41,7 +40,7 @@ class ColorsController extends Controller
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(CreateColorRequest $request)
+	public function store(ColorRequest $request)
 	{
 		Color::create($request->all());
 
@@ -71,7 +70,7 @@ class ColorsController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(UpdateColorRequest $request, Color $color)
+	public function update(ColorRequest $request, Color $color)
 	{
 		$color->update($request->all());
 

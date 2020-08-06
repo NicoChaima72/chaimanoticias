@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateNewsRequest extends FormRequest
+class ColorRequest extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -23,18 +23,23 @@ class CreateNewsRequest extends FormRequest
 	 */
 	public function rules()
 	{
-		return [
-			'category_id' => 'required',
-			'title' => 'required|max:100',
-			'excerpt' => 'required|max:400',
-			'body' => 'required'
+		$rules = [
+			'description' => 'required|unique:colors,description',
+			'background'  => 'required',
+			'text'        => 'required',
 		];
+
+		if ($this->method() === 'PUT') {
+			$rules['description'] = 'required|unique:colors,description,' . $this->route('color')->id;
+		}
+
+		return $rules;
 	}
 
 	public function messages()
 	{
 		return [
-			'category_id.required' => 'Selecciona una categoria'
+			'description.unique' => 'Esta descripcion ya está registrada'
 		];
 	}
 }

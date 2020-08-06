@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\Color;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateCategoryRequest;
-use App\Http\Requests\UpdateCategoryRequest;
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -43,7 +42,7 @@ class CategoriesController extends Controller
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(CreateCategoryRequest $request)
+	public function store(CategoryRequest $request)
 	{
 		Category::create($request->all());
 
@@ -87,7 +86,7 @@ class CategoriesController extends Controller
 	 * @param  \App\Category  $category
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(UpdateCategoryRequest $request, Category $category)
+	public function update(CategoryRequest $request, Category $category)
 	{
 		$category->update($request->all());
 

@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\News;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateNewsRequest;
-use App\Http\Requests\UpdateNewsRequest;
+use App\Http\Requests\NewsRequest;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -46,7 +45,7 @@ class NewsController extends Controller
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(CreateNewsRequest $request)
+	public function store(NewsRequest $request)
 	{
 		News::create($request->all());
 
@@ -91,7 +90,7 @@ class NewsController extends Controller
 	 * @param  \App\News  $news
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(UpdateNewsRequest $request, News $news)
+	public function update(NewsRequest $request, News $news)
 	{
 		$news->update($request->all());
 

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateCategoryRequest extends FormRequest
+class NewsRequest extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -23,18 +23,23 @@ class UpdateCategoryRequest extends FormRequest
 	 */
 	public function rules()
 	{
-		return [
-			'description' => 'required|unique:categories,description,' . $this->route('category')->id,
-			'color_id' => 'required'
+		$rules = [
+			'category_id' => 'required',
+			'title' => 'required|max:100',
+			'excerpt' => 'required|max:400',
+			'body' => 'required'
 		];
+
+		if ($this->method() === 'PUT') {
+		}
+
+		return $rules;
 	}
 
 	public function messages()
 	{
 		return [
-			'description.unique' => 'Esta categoria ya existe',
-			'description.required' => 'Debes ingresar una descripcion',
-			'color_id.required' => 'Debes seleccionar un color'
+			'category_id.required' => 'Selecciona una categoria'
 		];
 	}
 }
