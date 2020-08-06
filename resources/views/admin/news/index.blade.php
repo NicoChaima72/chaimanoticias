@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
-@section('description', 'Listado colores')
-@section('title', 'Listado colores')
+@section('description', 'Listado noticias')
+@section('title', 'Listado noticias')
 @push('links')
 <link rel="stylesheet" href="/adminlte/css/datatables/dataTables.bootstrap4.min.css">
 <style>
@@ -10,13 +10,12 @@
 </style>
 @endpush
 
-@section('content-title', 'Lista colores')
+@section('content-title', 'Lista noticias')
 @section('content-button')
-<a class="btn btn-primary" href="{{ route('admin.colors.create') }}">
-	<i class="fas fa-plus"></i> Agregar color
+<a class="btn btn-primary" href="{{ route('admin.news.create') }}">
+	<i class="fas fa-plus"></i> Agregar noticia
 </a>
 @endsection
-
 
 @section('content')
 
@@ -31,59 +30,36 @@
 
 <div class="card">
 	<div class="card-header">
-		<h3 class="card-title">Todos los colores</h3>
+		<h3 class="card-title">Todas las noticias</h3>
 	</div>
 	<div class="card-body" style="overflow: auto">
 
 		<table id="tablaInformacion" class="table table-bordered">
 			<thead>
 				<tr>
-					<th>Descripcion</th>
-					<th>Fondo</th>
-					<th>Texto</th>
-					<th>Ejemplo</th>
-					<th>n° Categorias</th>
+					<th>ID</th>
+					<th>Titulo</th>
+					<th>Extracto</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($colors as $color)
+				@foreach ($newsCollection as $news)
 				<tr>
-					<td>{{ $color->description }}</td>
-					<td>
-						<div class="d-flex align-items-center">
-							<div class="rounded-circle border mr-2"
-								style="width: 20px; height: 20px; background: {{ $color->background }}">
-							</div>
-							{{ $color->background }}
-						</div>
-					</td>
-					<td>
-						<div class="d-flex align-items-center">
-							<div class="rounded-circle border mr-2"
-								style="width: 20px; height: 20px; background: {{ $color->text }}">
-							</div>
-							{{ $color->text }}
-						</div>
-					</td>
-					<td>
-						<span class="p-2 rounded badge"
-							style="color: {{ $color->text }}; background: {{ $color->background }}">
-							Ejemplo
-						</span>
-					</td>
-					<td>{{ $color->countCategories() }}</td>
+					<td>{{ $news->id }}</td>
+					<td>{{ $news->title }}</td>
+					<td>{{ $news->excerpt }}</td>
 					<td>
 						<div class="d-flex">
-							<a href="{{ route('admin.colors.edit', $color) }}" class="btn btn-sm btn-warning mx-1">
+							<a href="{{ route('admin.news.edit', $news) }}" class="btn btn-sm btn-warning mx-1">
 								<i class="fas fa-pen"></i>
 							</a>
 							<a href="" class="btn btn-sm btn-outline-danger mx-1"
-								onclick="showMessage(event, '{{ $color->description }}', 'form-destroy-{{ $color->id }}', {{ $color->countCategories() }});">
+								onclick="showMessage(event, '{{ $news->title }}', 'form-destroy-{{ $news->id }}');">
 								<i class="fas fa-trash"></i>
 							</a>
-							<form id="form-destroy-{{ $color->id }}"
-								action="{{ route('admin.colors.destroy', $color) }}" method="POST" class="d-none">
+							<form id="form-destroy-{{ $news->id }}" action="{{ route('admin.news.destroy', $news) }}" method="POST"
+								class="d-none">
 								@csrf @method("DELETE")
 							</form>
 						</div>
@@ -96,7 +72,6 @@
 </div>
 @endsection
 
-
 @push('scripts')
 <script src="/adminlte/js/datatables/jquery.dataTables.min.js"></script>
 <script src="/adminlte/js/datatables/dataTables.bootstrap4.min.js"></script>
@@ -104,19 +79,19 @@
 <script src="/adminlte/js/datatables/responsive.bootstrap4.min.js"></script>
 <script>
 	$('#tablaInformacion').DataTable({
-		"paging": true,
+      "paging": true,
       "lengthChange": false,
       "searching": true,
       "ordering": true,
       "autoWidth": false,
       "responsive": true,
       "language": {
-				"url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json"
+        "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json"
       }
 		});
 
 
-		const showMessage = (e,title, id, countCategories) => {
+		const showMessage = (e,title, id) => {
 			e.preventDefault();
 			swal.fire({
 				title: '¿Estás seguro?',
@@ -129,17 +104,9 @@
 				cancelButtonText: 'Cancelar',
 			}).then((result) => {
 				if (result.value) {
-					countCategories == 0 ? $(`#${id}`).submit() : showMessageError();
+					$(`#${id}`).submit();
 				}
 			})
-		}
-
-		const showMessageError = () => {
-			swal.fire({
-				icon: 'error',
-				title: 'No permitido',
-				text: 'No se puede borrar este color porque contiene categorias asociadas',
-			});
 		}
 </script>
 @endpush

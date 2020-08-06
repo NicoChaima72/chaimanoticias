@@ -33,7 +33,7 @@
 						<option value="" selected disabled>-- Selecciona color --</option>
 						@foreach ($colors as $color)
 						<option value="{{ $color->id }}"
-							{{ old('color_id', $category->color->id) ==  $color->id ? 'selected' : null }}>
+							{{ old('color_id', $action != 'create' ? $category->color->id : null) ==  $color->id ? 'selected' : null }}>
 							{{ $color->description }}
 						</option>
 						@endforeach

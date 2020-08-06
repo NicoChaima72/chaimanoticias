@@ -22,9 +22,6 @@ Route::get('/', 'PagesController@home')->name('pages.home');
 //     return view('admin.dashboard-admin');
 // });
 
-// Route::get('{category}/{news}', function () {
-//     return view('pages.news');
-// });
 
 Auth::routes();
 
@@ -41,6 +38,7 @@ Route::group([
 	Route::get('/', 'AdminController@index')->name('dashboard');
 	Route::resource('colors', 'ColorsController', ['excerpt' => 'show']);
 	Route::resource('categories', 'CategoriesController');
+	Route::resource('news', 'NewsController');
 	// Route::get('/categories/create', function () {
 	//     return view('admin.categories.maintainer');
 	// });
@@ -53,4 +51,8 @@ Route::group([
 	// Route::get('/importances/create', function () {
 	//     return view('admin.importances.maintainer');
 	// });
+});
+
+Route::get('{category}/{news}', function () {
+	return view('pages.news');
 });

@@ -8,6 +8,17 @@ class Category extends Model
 {
 	protected $fillable = ['color_id', 'description'];
 
+
+	public function getRouteKeyName()
+	{
+		return 'url';
+	}
+
+	public function countNews()
+	{
+		return $this->news()->count();
+	}
+
 	public static function create(array $attributes = [])
 	{
 		$category = static::query()->create($attributes);
@@ -45,5 +56,10 @@ class Category extends Model
 	public function color()
 	{
 		return $this->belongsTo(Color::class);
+	}
+
+	public function news()
+	{
+		return $this->hasMany(News::class);
 	}
 }

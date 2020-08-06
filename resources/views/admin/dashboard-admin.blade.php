@@ -83,7 +83,7 @@
 	</div>
 	<!-- /.card-header -->
 	<div class="card-body" style="overflow: auto;">
-		<table id="tablaNoticias" class="table table-bordered table-striped">
+		<table id="tablaInformacion" class="table table-bordered table-striped">
 			<thead>
 				<tr>
 					<th>Rendering engine</th>
@@ -515,7 +515,7 @@
 <script src="/adminlte/js/datatables/dataTables.responsive.min.js"></script>
 <script src="/adminlte/js/datatables/responsive.bootstrap4.min.js"></script>
 <script>
-	$('#tablaNoticias').DataTable({
+	$('#tablaInformacion').DataTable({
       "paging": true,
       "lengthChange": false,
       "searching": true,

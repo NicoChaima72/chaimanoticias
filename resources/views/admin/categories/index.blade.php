@@ -35,14 +35,12 @@
 	</div>
 	<div class="card-body" style="overflow: auto">
 
-		<table id="tablaNoticias" class="table table-bordered">
+		<table id="tablaInformacion" class="table table-bordered">
 			<thead>
 				<tr>
 					<th>Descripcion</th>
 					<th>Color</th>
-					{{-- <th>Texto</th>
-					<th>Ejemplo</th>
-					--}}
+					<th>n° Noticias</th>
 					<th>Acciones</th>
 				</tr>
 			</thead>
@@ -56,40 +54,27 @@
 							Ejemplo
 						</span>
 					</td>
-					{{--
-<td>
-	<div class="d-flex align-items-center">
-		<div class="rounded-circle border mr-2" style="width: 20px; height: 20px; background: {{ $color->text }}">
+					<td>{{ $category->countNews() }}</td>
+					<td>
+						<div class="d-flex">
+							<a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-sm btn-warning mx-1">
+								<i class="fas fa-pen"></i>
+							</a>
+							<a href="" class="btn btn-sm btn-outline-danger mx-1"
+								onclick="showMessage(event, '{{ $category->description }}', 'form-destroy-{{ $category->id }}', {{ $category->countNews() }});">
+								<i class="fas fa-trash"></i>
+							</a>
+							<form id="form-destroy-{{ $category->id }}" action="{{ route('admin.categories.destroy', $category) }}"
+								method="POST" class="d-none">
+								@csrf @method("DELETE")
+							</form>
+						</div>
+					</td>
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
 	</div>
-	{{ $color->text }}
-</div>
-</td>
-<td>
-	<span class="p-2 rounded badge" style="color: {{ $color->text }}; background: {{ $color->background }}">
-		Ejemplo
-	</span>
-</td>
---}}
-<td>
-	<div class="d-flex">
-		<a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-sm btn-warning mx-1">
-			<i class="fas fa-pen"></i>
-		</a>
-		<a href="" class="btn btn-sm btn-outline-danger mx-1"
-			onclick="showMessage(event, '{{ $category->description }}', 'form-destroy-{{ $category->id }}');">
-			<i class="fas fa-trash"></i>
-		</a>
-		<form id="form-destroy-{{ $category->id }}" action="{{ route('admin.categories.destroy', $category) }}"
-			method="POST" class="d-none">
-			@csrf @method("DELETE")
-		</form>
-	</div>
-</td>
-</tr>
-@endforeach
-</tbody>
-</table>
-</div>
 </div>
 @endsection
 
@@ -100,7 +85,7 @@
 <script src="/adminlte/js/datatables/dataTables.responsive.min.js"></script>
 <script src="/adminlte/js/datatables/responsive.bootstrap4.min.js"></script>
 <script>
-	$('#tablaNoticias').DataTable({
+	$('#tablaInformacion').DataTable({
       "paging": true,
       "lengthChange": false,
       "searching": true,
@@ -113,7 +98,7 @@
 		});
 
 
-		const showMessage = (e,title, id) => {
+		const showMessage = (e,title, id, countNews) => {
 			e.preventDefault();
 			swal.fire({
 				title: '¿Estás seguro?',
@@ -126,9 +111,17 @@
 				cancelButtonText: 'Cancelar',
 			}).then((result) => {
 				if (result.value) {
-					$(`#${id}`).submit();
+					countNews == 0 ? $(`#${id}`).submit() : showMessageError();
 				}
 			})
+		}
+
+		const showMessageError = () => {
+			swal.fire({
+				icon: 'error',
+				title: 'No permitido',
+				text: 'No se puede borrar esta categoria porque contiene noticias asociadas',
+			});
 		}
 </script>
 @endpush

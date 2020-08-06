@@ -19,13 +19,13 @@
 			</a>
 			<ul class="nav nav-treeview">
 				<li class="nav-item">
-					<a href="../../index.html" class="nav-link {{ setActiveRoute('admin.news') }}">
+					<a href="{{ route('admin.news.index') }}" class="nav-link {{ setActiveRoute('admin.news.index') }}">
 						<i class="far fa-circle nav-icon"></i>
-						<p>Mis noticias</p>
+						<p>Ver noticias</p>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="../../index2.html" class="nav-link {{ setActiveRoute('admin.news.create') }}">
+					<a href="{{ route('admin.news.create') }}" class="nav-link {{ setActiveRoute('admin.news.create') }}">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Agregar noticia</p>
 					</a>
